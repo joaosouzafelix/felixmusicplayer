@@ -1,4 +1,10 @@
 body {
 background-color: rgb(11, 30, 46);
 
-}
+} 
+
+    h1 {
+        font-size: 100px;
+        color: rgb(6, 6, 53);
+        text-transform: uppercase;
+    }
