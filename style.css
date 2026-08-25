@@ -82,6 +82,29 @@ h1 {
     border-radius: 8px;
 }
 
+/* ===== CAMADA PARA ESCONDER O LOGO DO YOUTUBE ===== */
+.camada-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.camada-logo::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 30px;
+    background: #121212;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
 /* ===== INFORMAÇÕES DA MÚSICA ===== */
 .info-musica {
     padding: 10px 5px 5px 5px;
@@ -142,6 +165,13 @@ h1 {
     .nome-artista {
         font-size: 12px;
     }
+
+    .camada-logo::after {
+        width: 60px;
+        height: 24px;
+        top: 8px;
+        left: 8px;
+    }
 }
 
 /* ===== CONFIGURAÇÃO PARA CELULARES ===== */
@@ -174,5 +204,12 @@ h1 {
     
     .nome-artista {
         font-size: 10px;
+    }
+
+    .camada-logo::after {
+        width: 50px;
+        height: 20px;
+        top: 5px;
+        left: 5px;
     }
 }
