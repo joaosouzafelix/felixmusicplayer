@@ -1,63 +1,73 @@
-/* ===== FUNDO DO SITE ===== */
-body {
-    background-color: #121212;
+/* ===== RESET E CONFIGURAÇÃO INICIAL ===== */
+* {
     margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ===== TÍTULO PRINCIPAL ===== */
-h1 {
-    font-size: 100px;
-    color: #1DB954;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    text-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
-    margin-bottom: 10px;
-}
-
-/* ===== NOME DA ARTISTA ===== */
-.artista {
+body {
+    background-color: #000000;  /* Preto puro igual Spotify */
+    font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
+    padding: 20px 40px;
     color: #FFFFFF;
-    font-size: 40px;
+}
+
+/* ===== TÍTULO PRINCIPAL (igual Spotify) ===== */
+h1 {
+    font-size: 96px;
+    color: #1ED760;  /* Verde Spotify original */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
     text-align: center;
-    font-family: Arial, sans-serif;
-    margin-top: -30px;
+    margin: 20px 0 5px 0;
+    font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ===== NOME DA ARTISTA (igual Spotify) ===== */
+.artista {
+    font-size: 32px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -10px;
     margin-bottom: 40px;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
+    font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* ===== GÊNERO MUSICAL ===== */
 .genero {
-    color: #1DB954;
-    font-size: 28px;
+    font-size: 24px;
+    color: #1ED760;
+    font-weight: 700;
     text-align: center;
-    font-family: Arial, sans-serif;
-    border-top: 2px solid #1DB954;
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 30px;
-    margin-top: 50px;
+    margin-top: 40px;
+    letter-spacing: 0.5px;
+    font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* ===== GRADE DE MÚSICAS (ESTILO SPOTIFY) ===== */
+/* ===== GRADE DE MÚSICAS (igual Spotify) ===== */
 .grade-musicas {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+    padding: 20px 0 40px 0;
 }
 
-/* ===== CARD DE CADA MÚSICA ===== */
+/* ===== CARD DE CADA MÚSICA (igual Spotify) ===== */
 .card-musica {
-    background-color: #181818;
-    border-radius: 12px;
-    padding: 15px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    background-color: #181818;  /* Cor exata do card Spotify */
+    border-radius: 8px;
+    padding: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: default;
 }
 
 .card-musica:hover {
-    background-color: #282828;
+    background-color: #282828;  /* Cor ao passar o mouse - igual Spotify */
     transform: scale(1.02);
 }
 
@@ -65,11 +75,11 @@ h1 {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    padding-bottom: 100%;  /* Faz ficar QUADRADO igual Spotify */
     height: 0;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
 .video-container iframe {
@@ -79,10 +89,10 @@ h1 {
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
-/* ===== CAMADA PARA ESCONDER O LOGO DO YOUTUBE ===== */
+/* ===== CAMADA PARA ESCONDER LOGO DO YOUTUBE ===== */
 .camada-logo {
     position: absolute;
     top: 0;
@@ -96,120 +106,214 @@ h1 {
 .camada-logo::after {
     content: '';
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 80px;
-    height: 30px;
-    background: #121212;
+    top: 8px;
+    left: 8px;
+    width: 70px;
+    height: 26px;
+    background: #000000;
     border-radius: 4px;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
-/* ===== INFORMAÇÕES DA MÚSICA ===== */
+/* ===== INFORMAÇÕES DA MÚSICA (igual Spotify) ===== */
 .info-musica {
-    padding: 10px 5px 5px 5px;
+    padding: 12px 4px 4px 4px;
 }
 
 .nome-musica {
     color: #FFFFFF;
     font-size: 16px;
-    font-weight: bold;
-    margin: 5px 0 3px 0;
+    font-weight: 700;
+    margin: 0 0 4px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.4;
 }
 
 .nome-artista {
-    color: #A7A7A7;
+    color: #A7A7A7;  /* Cor exata do Spotify */
     font-size: 14px;
+    font-weight: 400;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.nome-artista:hover {
+    color: #FFFFFF;  /* Fica branco igual Spotify */
+    text-decoration: underline;
+}
+
+/* ===== BOTÃO DE PLAY (igual Spotify - efeito visual) ===== */
+.card-musica {
+    position: relative;
+}
+
+.card-musica::after {
+    content: '▶';
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    background-color: #1ED760;
+    color: #000000;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    transform: translateY(8px);
+    pointer-events: none;
+}
+
+.card-musica:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RODAPÉ OPCIONAL ===== */
+.rodape {
+    text-align: center;
+    color: #A7A7A7;
+    font-size: 14px;
+    padding: 30px 0 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.rodape span {
+    color: #1ED760;
+    font-weight: 700;
+}
+
+/* ============================================ */
 /* ===== CONFIGURAÇÃO PARA TABLETS ===== */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 40px;
+    body {
+        padding: 15px 20px;
     }
-    
+
+    h1 {
+        font-size: 48px;
+        letter-spacing: -1px;
+        margin: 10px 0 5px 0;
+    }
+
     .artista {
         font-size: 24px;
-        margin-top: -10px;
+        margin-top: -5px;
+        margin-bottom: 25px;
     }
-    
+
     .genero {
-        font-size: 20px;
+        font-size: 18px;
+        padding-top: 20px;
+        margin-top: 30px;
     }
-    
-    body {
-        padding: 10px;
-    }
-    
+
     .grade-musicas {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-        padding: 10px 0;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+        padding: 10px 0 20px 0;
     }
-    
+
     .card-musica {
-        padding: 10px;
+        padding: 12px;
     }
-    
+
     .nome-musica {
         font-size: 14px;
     }
-    
+
     .nome-artista {
         font-size: 12px;
     }
 
     .camada-logo::after {
-        width: 60px;
-        height: 24px;
-        top: 8px;
-        left: 8px;
+        width: 55px;
+        height: 22px;
+        top: 6px;
+        left: 6px;
+    }
+
+    .card-musica::after {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        bottom: 65px;
+        right: 14px;
     }
 }
 
+/* ============================================ */
 /* ===== CONFIGURAÇÃO PARA CELULARES ===== */
 @media (max-width: 480px) {
-    h1 {
-        font-size: 28px;
+    body {
+        padding: 10px 10px;
     }
-    
+
+    h1 {
+        font-size: 32px;
+        letter-spacing: -0.5px;
+        margin: 5px 0 5px 0;
+    }
+
     .artista {
         font-size: 18px;
+        margin-bottom: 15px;
     }
-    
+
     .genero {
-        font-size: 16px;
+        font-size: 14px;
+        padding-top: 15px;
+        margin-top: 20px;
     }
-    
+
     .grade-musicas {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 10px;
-        padding: 5px 0;
+        padding: 5px 0 10px 0;
     }
-    
+
     .card-musica {
         padding: 8px;
+        border-radius: 6px;
     }
-    
+
+    .info-musica {
+        padding: 8px 2px 2px 2px;
+    }
+
     .nome-musica {
-        font-size: 12px;
+        font-size: 11px;
     }
-    
+
     .nome-artista {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .camada-logo::after {
-        width: 50px;
-        height: 20px;
-        top: 5px;
-        left: 5px;
+        width: 40px;
+        height: 16px;
+        top: 4px;
+        left: 4px;
+        border-radius: 3px;
+    }
+
+    .card-musica::after {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+        bottom: 50px;
+        right: 10px;
     }
 }
