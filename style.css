@@ -1,247 +1,232 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
-    <title>felixmusicplayer</title>
-</head>
-<body>
+/* ===== FUNDO DO SITE ===== */
+body {
+    background-color: #121212;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
 
-    <!-- ===== LAYOUT PRINCIPAL ===== -->
-    <div class="container">
 
-        <!-- ===== MENU LATERAL (ESQUERDA) ===== -->
-        <aside class="sidebar">
-            <div class="logo">
-                <span class="logo-icon">🎵</span>
-                <span class="logo-text">felixmusic</span>
-            </div>
+/* ===== TÍTULO PRINCIPAL ===== */
+h1 {
+    font-size: 100px;
+    color: #1DB954;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
+    margin-bottom: 10px;
+}
 
-            <nav class="menu">
-                <ul>
-                    <li class="menu-item ativo">
-                        <span class="menu-icon">🏠</span>
-                        <span>Início</span>
-                    </li>
-                    <li class="menu-item">
-                        <span class="menu-icon">🔍</span>
-                        <span>Buscar</span>
-                    </li>
-                    <li class="menu-item">
-                        <span class="menu-icon">📚</span>
-                        <span>Sua Biblioteca</span>
-                    </li>
-                </ul>
-            </nav>
 
-            <!-- ===== PLAYLISTS ===== -->
-            <div class="playlists">
-                <div class="playlists-header">
-                    <span>SUAS PLAYLISTS</span>
-                    <button class="btn-criar-playlist">+</button>
-                </div>
-                <ul class="playlists-lista">
-                    <li class="playlist-item">❤️ Favoritas</li>
-                    <li class="playlist-item">🔥 Sertanejo Raiz</li>
-                    <li class="playlist-item">🌾 Ana Castela</li>
-                    <li class="playlist-item">🎸 Modão</li>
-                    <li class="playlist-item">🚜 AgroPlay</li>
-                </ul>
-            </div>
+/* ===== NOME DA ARTISTA ===== */
+.artista {
+    color: #FFFFFF;
+    font-size: 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: -30px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
 
-            <!-- ===== INSTALAR APP ===== -->
-            <div class="instalar-app">
-                <span>📲 Instalar App</span>
-            </div>
-        </aside>
 
-        <!-- ===== CONTEÚDO PRINCIPAL (DIREITA) ===== -->
-        <main class="conteudo">
+/* ===== GÊNERO MUSICAL ===== */
+.genero {
+    color: #1DB954;
+    font-size: 28px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-top: 2px solid #1DB954;
+    padding-top: 30px;
+    margin-top: 50px;
+}
 
-            <!-- ===== TOPO COM PESQUISA ===== -->
-            <header class="topo">
-                <div class="barra-pesquisa">
-                    <span class="lupa">🔍</span>
-                    <input type="text" placeholder="O que você quer ouvir?" class="input-pesquisa">
-                </div>
-                <div class="perfil">
-                    <span>👤 João Felix</span>
-                </div>
-            </header>
 
-            <!-- ===== TÍTULO DA PÁGINA ===== -->
-            <section class="cabecalho-pagina">
-                <h1 class="titulo-pagina">🎵 Ana Castela</h1>
-                <p class="subtitulo-pagina">Sertanejo • 44 músicas</p>
-            </section>
+/* ===== GRADE DE MÚSICAS (ESTILO SPOTIFY) ===== */
+.grade-musicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
 
-            <!-- ===== LISTA DE MÚSICAS (UMA EMBAIXO DA OUTRA) ===== -->
-            <section class="lista-musicas">
 
-                <!-- MÚSICA 1 -->
-                <div class="musica-item">
-                    <div class="musica-numero">1</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/DyQ3McP4Two/0.jpg" alt="BOIADEIRA">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">BOIADEIRA</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:42</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
+/* ===== CARD DE CADA MÚSICA ===== */
+.card-musica {
+    background-color: #181818;
+    border-radius: 12px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-                <!-- MÚSICA 2 -->
-                <div class="musica-item">
-                    <div class="musica-numero">2</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/deBz58UAsRs/0.jpg" alt="Nois é da Roça Bebê">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Nois é da Roça Bebê</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">2:58</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
 
-                <!-- MÚSICA 3 -->
-                <div class="musica-item">
-                    <div class="musica-numero">3</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/wqh8Z59rMI4/0.jpg" alt="Neon">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Neon</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:15</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
+.card-musica:hover {
+    background-color: #282828;
+    transform: scale(1.02);
+}
 
-                <!-- MÚSICA 4 -->
-                <div class="musica-item">
-                    <div class="musica-numero">4</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/vcS7MXjupgk/0.jpg" alt="As Menina da Pecuária">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">As Menina da Pecuária</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:28</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
 
-                <!-- MÚSICA 5 -->
-                <div class="musica-item">
-                    <div class="musica-numero">5</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/Fb4LC4ndOSo/0.jpg" alt="Agronejo">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Agronejo</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">2:45</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
+/* ===== VÍDEO DENTRO DO CARD ===== */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
 
-                <!-- MÚSICA 6 -->
-                <div class="musica-item">
-                    <div class="musica-numero">6</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/ey1ZTG77V9o/0.jpg" alt="Chama">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Chama</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:10</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
 
-                <!-- MÚSICA 7 -->
-                <div class="musica-item">
-                    <div class="musica-numero">7</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/69JAoslGYI8/0.jpg" alt="Pipoco">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Pipoco</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:35</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
 
-                <!-- MÚSICA 8 -->
-                <div class="musica-item">
-                    <div class="musica-numero">8</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/rUW7ev79fTA/0.jpg" alt="Dona de Mim">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Dona de Mim</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:20</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
 
-                <!-- MÚSICA 9 -->
-                <div class="musica-item">
-                    <div class="musica-numero">9</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/LoDWge1WojE/0.jpg" alt="Clima de Rodeio">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Clima de Rodeio</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:05</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
+/* ===== CAMADA PARA ESCONDER O LOGO DO YOUTUBE ===== */
+.camada-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 10;
+}
 
-                <!-- MÚSICA 10 -->
-                <div class="musica-item">
-                    <div class="musica-numero">10</div>
-                    <div class="musica-thumb">
-                        <img src="https://img.youtube.com/vi/Kpd4aPjkm38/0.jpg" alt="Quando Tá Com Ela">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="musica-info">
-                        <span class="musica-nome-lista">Quando Tá Com Ela</span>
-                        <span class="musica-artista-lista">Ana Castela</span>
-                    </div>
-                    <div class="musica-duracao">3:50</div>
-                    <button class="btn-salvar">❤️</button>
-                </div>
 
-                <!-- CONTINUE ADICIONANDO AS 44 MÚSICAS AQUI -->
-                <!-- Use o mesmo padrão para todas! -->
+.camada-logo::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 30px;
+    background: #121212;
+    border-radius: 4px;
+    opacity: 0.9;
+}
 
-            </section>
 
-            <!-- ===== RODAPÉ ===== -->
-            <footer class="rodape">
-                Feito com 💚 por <span>João Felix</span> • 44 músicas • 🎵 Spotify Style
-            </footer>
+/* ===== INFORMAÇÕES DA MÚSICA ===== */
+.info-musica {
+    padding: 10px 5px 5px 5px;
+}
 
-        </main>
-    </div>
 
-</body>
-</html>
+.nome-musica {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0 3px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.nome-artista {
+    color: #A7A7A7;
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ===== CONFIGURAÇÃO PARA TABLETS ===== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+   
+    .artista {
+        font-size: 24px;
+        margin-top: -10px;
+    }
+   
+    .genero {
+        font-size: 20px;
+    }
+   
+    body {
+        padding: 10px;
+    }
+   
+    .grade-musicas {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 10px 0;
+    }
+   
+    .card-musica {
+        padding: 10px;
+    }
+   
+    .nome-musica {
+        font-size: 14px;
+    }
+   
+    .nome-artista {
+        font-size: 12px;
+    }
+
+
+    .camada-logo::after {
+        width: 60px;
+        height: 24px;
+        top: 8px;
+        left: 8px;
+    }
+}
+
+
+/* ===== CONFIGURAÇÃO PARA CELULARES ===== */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+   
+    .artista {
+        font-size: 18px;
+    }
+   
+    .genero {
+        font-size: 16px;
+    }
+   
+    .grade-musicas {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        padding: 5px 0;
+    }
+   
+    .card-musica {
+        padding: 8px;
+    }
+   
+    .nome-musica {
+        font-size: 12px;
+    }
+   
+    .nome-artista {
+        font-size: 10px;
+    }
+
+
+    .camada-logo::after {
+        width: 50px;
+        height: 20px;
+        top: 5px;
+        left: 5px;
+    }
+}
